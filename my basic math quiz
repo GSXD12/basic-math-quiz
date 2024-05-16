@@ -1,0 +1,34 @@
+import random
+print("Hello welcome to my basic maths quiz!")
+
+# amount of questions
+question_amount = int(input('how many questions would you like to answer'))
+
+
+# Asking user for a valid operator
+while True:
+    operation = input('''What operator do you want the quiz to be 
+    Please enter one of the following
+    + for addition
+    - for subtraction
+    x for multiplication
+    / for division
+    Enter here: ''')
+
+    if operation == '+':
+        print('you have chosen addition')
+        break
+    elif operation == '-':
+        print('you have chosen subtraction')
+        break
+    elif operation == 'x':
+        print('you have chosen multiplication')
+        break
+    elif operation == '/':
+        print('you have chosen division')
+        break
+    else:
+        print('you did not choose a valid operation please enter another one that is valid')
+if operation == '+':
+    Number_1 = random.randint(1, 10)
+    Number_2 = random.randint(1, 10) 
