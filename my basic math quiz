@@ -28,21 +28,15 @@ while True:
         print('you have chosen division')
         break
     else:
-        print('you did not choose a valid operation please enter another one that is valid')
-if operation == '+':
-    Number_1 = random.randint(1, 10)
-    Number_2 = random.randint(1, 10)
-    addition_ans = Number_1 + Number_2
-    addition_response = int(input(f'What is {Number_1} + {Number_2} = '))
-    if addition_response != addition_ans:
-        print('Your answer is incorrect')
-    elif addition_response == addition_response:
-        print('Your answer is correct')
+        print('you did not choose a valid operation please enter one that is from the list and valid')
+
+# Initialize Negative_ans
+Negative_ans = None
 
 if operation == '-':
     while True:
         Negative_ans = input('''Do you want your answers to be positive only?
-please enter yes or no :''')
+    please enter yes or no :''')
         if Negative_ans == 'yes':
             print('Your minus answers will be positive only')
             break
@@ -51,23 +45,44 @@ please enter yes or no :''')
             break
         else:
             print('You did not choose a valid answer')
+# Main loop
+for _ in range(question_amount):
+    if operation == '+':
+        Number_1 = random.randint(1, 10)
+        Number_2 = random.randint(1, 10)
+        addition_ans = Number_1 + Number_2
+        addition_response = int(input(f'What is {Number_1} + {Number_2} = '))
+        if addition_response != addition_ans:
+            print('Your answer is incorrect')
+        elif addition_response == addition_response:
+            print('Your answer is correct')
 
-if Negative_ans == 'no':
-    Number_3 = random.randint(1, 10)
-    Number_4 = random.randint(1, 10)
-    Negative_no_ans = Number_3 - Number_4
-    negative_no_response = int(input(f'What is {Number_3} - {Number_4} = '))
-    if negative_no_response != Negative_no_ans:
-        print('Your answer is incorrect')
-    elif negative_no_response == Negative_no_ans:
-        print('Your answer is correct')
+    if operation == '-':
+        if Negative_ans == 'no':
+            Number_3 = random.randint(1, 10)
+            Number_4 = random.randint(1, 10)
+            Negative_no_ans = Number_3 - Number_4
+            negative_no_response = int(input(f'What is {Number_3} - {Number_4} = '))
+            if negative_no_response != Negative_no_ans:
+                print('Your answer is incorrect')
+            elif negative_no_response == Negative_no_ans:
+                print('Your answer is correct')
 
-if Negative_ans == 'yes':
-    Number_4 = random.randint(5, 10)
-    Number_5 = random.randint(1, 5)
-    Negative_yes_ans = Number_4 - Number_5
-    Negative_yes_response = int(input(f'What is {Number_4} - {Number_5} = '))
-    if Negative_yes_response != Negative_yes_ans:
-        print('Your answer is incorrect')
-    elif Negative_yes_response == Negative_yes_ans:
-        print('Your answer is correct')
+        if Negative_ans == 'yes':
+            Number_4 = random.randint(5, 10)
+            Number_5 = random.randint(1, 5)
+            Negative_yes_ans = Number_4 - Number_5
+            Negative_yes_response = int(input(f'What is {Number_4} - {Number_5} = '))
+            if Negative_yes_response != Negative_yes_ans:
+                print('Your answer is incorrect')
+            elif Negative_yes_response == Negative_yes_ans:
+                print('Your answer is correct')
+    if operation == 'x':
+        Number_6 = random.randint(1, 10)
+        Number_7 = random.randint(1, 10)
+        Multiplication_ans = Number_6 * Number_7
+        Multiplication_response = int(input(f'What is {Number_6} x {Number_7} = '))
+        if Multiplication_response != Multiplication_ans:
+            print('Your answer is incorrect')
+        elif Multiplication_response == Multiplication_ans:
+            print('Your answer is correct')
