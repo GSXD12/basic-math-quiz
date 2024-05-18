@@ -11,7 +11,7 @@ while True:
     Please enter one of the following
     + for addition
     - for subtraction
-    x for multiplication
+    x for multiplication    
     / for division
     Enter here: ''')
 
@@ -31,4 +31,43 @@ while True:
         print('you did not choose a valid operation please enter another one that is valid')
 if operation == '+':
     Number_1 = random.randint(1, 10)
-    Number_2 = random.randint(1, 10) 
+    Number_2 = random.randint(1, 10)
+    addition_ans = Number_1 + Number_2
+    addition_response = int(input(f'What is {Number_1} + {Number_2} = '))
+    if addition_response != addition_ans:
+        print('Your answer is incorrect')
+    elif addition_response == addition_response:
+        print('Your answer is correct')
+
+if operation == '-':
+    while True:
+        Negative_ans = input('''Do you want your answers to be positive only?
+please enter yes or no :''')
+        if Negative_ans == 'yes':
+            print('Your minus answers will be positive only')
+            break
+        elif Negative_ans == 'no':
+            print('Your minus answers possibly will be in the negatives')
+            break
+        else:
+            print('You did not choose a valid answer')
+
+if Negative_ans == 'no':
+    Number_3 = random.randint(1, 10)
+    Number_4 = random.randint(1, 10)
+    Negative_no_ans = Number_3 - Number_4
+    negative_no_response = int(input(f'What is {Number_3} - {Number_4} = '))
+    if negative_no_response != Negative_no_ans:
+        print('Your answer is incorrect')
+    elif negative_no_response == Negative_no_ans:
+        print('Your answer is correct')
+
+if Negative_ans == 'yes':
+    Number_4 = random.randint(5, 10)
+    Number_5 = random.randint(1, 5)
+    Negative_yes_ans = Number_4 - Number_5
+    Negative_yes_response = int(input(f'What is {Number_4} - {Number_5} = '))
+    if Negative_yes_response != Negative_yes_ans:
+        print('Your answer is incorrect')
+    elif Negative_yes_response == Negative_yes_ans:
+        print('Your answer is correct')
