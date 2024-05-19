@@ -1,11 +1,10 @@
 import random
 print("Hello welcome to my basic maths quiz!")
 
-# amount of questions
+# amount of questions the program will generate and ask the user
 question_amount = int(input('how many questions would you like to answer'))
 
-
-# Asking user for a valid operator
+# Asking the user to choose a valid operator
 while True:
     operation = input('''What operator do you want the quiz to be 
     Please enter one of the following
@@ -33,6 +32,11 @@ while True:
 # Initialize Negative_ans
 Negative_ans = None
 
+# Initialize quiz score
+Quiz_score = 0
+
+# Asking if the user wants only positive answers or negative and positive answers for minus
+# Questions
 if operation == '-':
     while True:
         Negative_ans = input('''Do you want your answers to be positive only?
@@ -45,7 +49,9 @@ if operation == '-':
             break
         else:
             print('You did not choose a valid answer')
+
 # Main loop
+# For in range to make sure user gets desired amount of questions
 for _ in range(question_amount):
     if operation == '+':
         Number_1 = random.randint(1, 10)
@@ -56,7 +62,9 @@ for _ in range(question_amount):
             print('Your answer is incorrect')
         elif addition_response == addition_response:
             print('Your answer is correct')
+            Quiz_score = Quiz_score + 1
 
+    # This is if the user wants the answers to be possibly in the negatives or positives
     if operation == '-':
         if Negative_ans == 'no':
             Number_3 = random.randint(1, 10)
@@ -67,16 +75,20 @@ for _ in range(question_amount):
                 print('Your answer is incorrect')
             elif negative_no_response == Negative_no_ans:
                 print('Your answer is correct')
+                Quiz_score = Quiz_score + 1
 
+        # This is if the user wants only positive questions
         if Negative_ans == 'yes':
             Number_4 = random.randint(5, 10)
-            Number_5 = random.randint(1, 5)
+            Number_5 = random.randint(1, Number_4)
             Negative_yes_ans = Number_4 - Number_5
             Negative_yes_response = int(input(f'What is {Number_4} - {Number_5} = '))
             if Negative_yes_response != Negative_yes_ans:
                 print('Your answer is incorrect')
             elif Negative_yes_response == Negative_yes_ans:
                 print('Your answer is correct')
+                Quiz_score = Quiz_score + 1
+
     if operation == 'x':
         Number_6 = random.randint(1, 10)
         Number_7 = random.randint(1, 10)
@@ -86,3 +98,6 @@ for _ in range(question_amount):
             print('Your answer is incorrect')
         elif Multiplication_response == Multiplication_ans:
             print('Your answer is correct')
+            Quiz_score = Quiz_score + 1
+
+print(f'You got {Quiz_score} out of {question_amount}')
