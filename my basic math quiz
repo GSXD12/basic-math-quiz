@@ -101,7 +101,7 @@ for _ in range(question_amount):
                 history.append((f'{Number_3} - {Number_4}', negative_no_response, None))
 
         # This is if the user wants only positive questions
-        if Negative_ans == 'yes':
+        if Division_ans == 'yes':
             Number_4 = random.randint(5, 10)
             Number_5 = random.randint(1, Number_4)
             Negative_yes_ans = Number_4 - Number_5
