@@ -128,7 +128,7 @@ for _ in range(question_amount):
             history.append((f'{Number_6} x {Number_7}', Multiplication_response, None))
 
     if operation == '/':
-        if Negative_ans == 'yes':
+        if Division_ans == 'yes':
             Number_8 = random.randint(1, 10)
             Number_9 = random.randint(1, 10)
             Division_ans_yes = Number_8 // Number_9
