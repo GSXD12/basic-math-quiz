@@ -1,4 +1,5 @@
 import random
+
 print("Hello welcome to my basic maths quiz!")
 
 # amount of questions the program will generate and ask the user
@@ -38,6 +39,9 @@ Quiz_score = 0
 # Initialize history list
 history = []
 
+# Initialize Division_ans
+Division_ans = None
+
 # Asking if the user wants only positive answers or negative and positive answers for minus
 # Questions
 if operation == '-':
@@ -67,7 +71,6 @@ if operation == '/':
             break
         else:
             print('You did not choose a valid answer')
-        
 
 # Main loop
 # For in range to make sure user gets desired amount of questions
@@ -127,11 +130,13 @@ for _ in range(question_amount):
             Quiz_score = Quiz_score + 1
             history.append((f'{Number_6} x {Number_7}', Multiplication_response, None))
 
+    # This is if you want your division answers to be integers
     if operation == '/':
         if Division_ans == 'yes':
-            Number_8 = random.randint(1, 10)
             Number_9 = random.randint(1, 10)
-            Division_ans_yes = Number_8 // Number_9
+            quotient = random.randint(1, 10)
+            Number_8 = Number_9 * quotient
+            Division_ans_yes = quotient
             Division_yes_response = int(input(f'What is {Number_8} / {Number_9} = '))
             if Division_yes_response != Division_ans_yes:
                 print('Your answer is incorrect')
@@ -141,6 +146,19 @@ for _ in range(question_amount):
                 Quiz_score = Quiz_score + 1
                 history.append((f'{Number_8} / {Number_9}', Division_yes_response, None))
 
+        if Division_ans == 'no':
+            Number_10 = random.randint(1, 10)
+            Number_11 = random.randint(1, 10)
+            Division_ans_no = Number_10 / Number_11
+            Division_no_response = int(input(f'What is {Number_10} / {Number_11} = '))
+            if Division_no_response != Division_ans_no:
+                print('Your answer is incorrect')
+                history.append((f'{Number_10} / {Number_11}', Division_no_response, Division_ans_no))
+            else:
+                print('Your answer is correct')
+                Quiz_score = Quiz_score + 1
+                history.append((f'{Number_10} / {Number_11}', Division_no_response, None))
+
 print('\nQuiz History:')
 for question, user_answer, correct_answer in history:
     if correct_answer is not None:
@@ -149,4 +167,3 @@ for question, user_answer, correct_answer in history:
         print(f'Question: {question}, Your answer: {user_answer}, Correct')
 # Display score
 print(f'You got {Quiz_score} out of {question_amount}')
-
