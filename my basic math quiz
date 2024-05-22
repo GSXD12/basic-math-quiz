@@ -156,7 +156,13 @@ for _ in range(question_amount):
             Number_10 = random.randint(1, 10)
             Number_11 = random.randint(1, 10)
             Division_ans_no = round(Number_10 / Number_11, 1)
-            Division_no_response = get_valid_int(f'What is {Number_10} / {Number_11} = ')
+            while True:
+                try:
+                    Division_no_response = float(input(f'What is {Number_10} / {Number_11} = '))
+                    break
+                except ValueError:
+                    print('Invalid input. Please enter a valid number')
+
             if Division_no_response != Division_ans_no:
                 print('Your answer is incorrect')
                 history.append((f'{Number_10} / {Number_11}', Division_no_response, Division_ans_no))
@@ -176,6 +182,7 @@ percentage_score = (Quiz_score / question_amount) * 100
 # Display score
 print(f'You got {Quiz_score} out of {question_amount}')
 print(f'Your score is {percentage_score:.2f}%')
+
 
 
 
