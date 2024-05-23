@@ -1,4 +1,6 @@
+# This line is to import the get_valid_int module
 from get_valid_int import get_valid_int
+# Import random is to import the random module to generate random numbers
 import random
 
 print("Hello welcome to my basic maths quiz!")
@@ -155,9 +157,12 @@ for _ in range(question_amount):
         if Division_ans == 'no':
             Number_10 = random.randint(1, 10)
             Number_11 = random.randint(1, 10)
+            # Rounding the answer causing the answer to become a float
             Division_ans_no = round(Number_10 / Number_11, 1)
             while True:
                 try:
+                    # The float is there to make the user input a float. So when they enter a decimal
+                    # the program can still compare the users response and the answer of the equation.
                     Division_no_response = float(input(f'What is {Number_10} / {Number_11} = '))
                     break
                 except ValueError:
@@ -182,7 +187,6 @@ percentage_score = (Quiz_score / question_amount) * 100
 # Display score
 print(f'You got {Quiz_score} out of {question_amount}')
 print(f'Your score is {percentage_score:.2f}%')
-
 
 
 
