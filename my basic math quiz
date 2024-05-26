@@ -56,10 +56,10 @@ if operation == '-':
     while True:
         Negative_ans = input('''Do you want your answers to be positive only?
     please enter yes or no :''').lower()
-        if Negative_ans == 'yes':
+        if Negative_ans == 'yes' or Negative_ans == 'y':
             print('Your minus answers will be positive only')
             break
-        elif Negative_ans == 'no':
+        elif Negative_ans == 'no' or Negative_ans == 'n':
             print('Your minus answers possibly will be in the negatives')
             break
         else:
@@ -71,10 +71,10 @@ if operation == '/':
     while True:
         Division_ans = input('''Do you want your division answers to be integers only?
         please enter yes or no :''').lower()
-        if Division_ans == 'yes':
+        if Division_ans == 'yes' or Division_ans == 'y':
             print('Your division answers will be only integers')
             break
-        if Division_ans == 'no':
+        if Division_ans == 'no' or Division_ans == 'n':
             print('Your division answers will likely be in the decimals rounded to the 1st decimal point.')
             break
         else:
@@ -98,7 +98,7 @@ for _ in range(question_amount):
 
     # This is if the user wants the answers to be possibly in the negatives or positives
     if operation == '-':
-        if Negative_ans == 'no':
+        if Negative_ans == 'no' or Negative_ans == 'n':
             Number_3 = random.randint(1, 10)
             Number_4 = random.randint(1, 10)
             Negative_no_ans = Number_3 - Number_4
@@ -112,7 +112,7 @@ for _ in range(question_amount):
                 history.append((f'{Number_3} - {Number_4}', negative_no_response, None))
 
         # This is if the user wants only positive questions
-        if Negative_ans == 'yes':
+        if Negative_ans == 'yes' or Negative_ans == 'y':
             Number_4 = random.randint(5, 10)
             Number_5 = random.randint(1, Number_4)
             Negative_yes_ans = Number_4 - Number_5
@@ -140,7 +140,7 @@ for _ in range(question_amount):
 
     # This is if you want your division answers to be integers
     if operation == '/':
-        if Division_ans == 'yes':
+        if Division_ans == 'yes' or Division_ans == 'y':
             Number_9 = random.randint(1, 10)
             quotient = random.randint(1, 10)
             Number_8 = Number_9 * quotient
@@ -154,7 +154,7 @@ for _ in range(question_amount):
                 Quiz_score = Quiz_score + 1
                 history.append((f'{Number_8} / {Number_9}', Division_yes_response, None))
 
-        if Division_ans == 'no':
+        if Division_ans == 'no' or Division_ans == 'n':
             Number_10 = random.randint(1, 10)
             Number_11 = random.randint(1, 10)
             # Rounding the answer causing the answer to become a float
