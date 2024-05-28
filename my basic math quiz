@@ -1,4 +1,4 @@
-# Game: THis is a basic maths quiz game. It allows the user to pick operation and question amount.
+# Game: This is a basic maths quiz game. It allows the user to pick operation and question amount.
 # It also lets them see quiz history, quiz score and quiz score as a percentage
 # Author: Gurkirat Nijjar
 # Date finished upon: 28/05/2024
@@ -193,6 +193,7 @@ percentage_score = (Quiz_score / question_amount) * 100
 # Display score
 print(f'You got {Quiz_score} out of {question_amount}')
 print(f'Your score is {percentage_score:.2f}%')
+
 
 
 
