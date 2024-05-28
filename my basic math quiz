@@ -1,3 +1,8 @@
+# Game: THis is a basic maths quiz game. It allows the user to pick operation and question amount.
+# It also lets them see quiz history, quiz score and quiz score as a percentage
+# Author: Gurkirat Nijjar
+# Date finished upon: 28/05/2024
+
 # This line is to import the get_valid_int module
 from get_valid_int import get_valid_int
 # Import random is to import the random module to generate random numbers
